@@ -31,8 +31,7 @@ endfunction
 command! -nargs=* -complete=command UpdateAll call UpdateAll(<q-args>)
 
 function RunTest()
-  let l:cmd = "run-once.sh"
-  !ssh -N -f -L localhost:19002:localhost:19002 ubuntu@ubuntu
-  !firefox http://localhost:19002 &
+  let l:cmd = "make clean;./run-once.sh"
+  execute s:env . l:cmd . "'"
 endfunction
-command! -nargs=0 -complete=command Startnr call RunTest()
+command! -nargs=0 -complete=command RunTest call RunTest()

@@ -25,7 +25,7 @@ function UpdateAll(msg)
   endif
   execute "!git add " . expand("%")
   execute "!git commit -m" . l:msg
-  execute "!git push origin main"
+  execute "!git push origin master"
   call Update()
 endfunction
 command! -nargs=* -complete=command UpdateAll call UpdateAll(<q-args>)

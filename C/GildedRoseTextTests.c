@@ -39,5 +39,6 @@ int main()
 
         update_quality(items, last);
     }
+    printf("FOOBAR\n");
     return 0;
 }

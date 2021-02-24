@@ -1,4 +1,4 @@
-let s:env = "!ssh ubuntu@ubuntu -C 'cd rn-starter;"
+let s:env = "!ssh ubuntu@ubuntu -C 'cd GildedRose-Refactoring-Kata/C;"
 let mapleader="-"
 set number
 set expandtab
@@ -30,9 +30,9 @@ function UpdateAll(msg)
 endfunction
 command! -nargs=* -complete=command UpdateAll call UpdateAll(<q-args>)
 
-function Start_NR()
-  let l:cmd = "npm start"
+function RunTest()
+  let l:cmd = "run-once.sh"
   !ssh -N -f -L localhost:19002:localhost:19002 ubuntu@ubuntu
   !firefox http://localhost:19002 &
 endfunction
-command! -nargs=0 -complete=command Startnr call Start_NR()
+command! -nargs=0 -complete=command Startnr call RunTest()

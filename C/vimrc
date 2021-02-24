@@ -12,7 +12,7 @@ nnoremap <leader>ga :execute '!git add ' . expand("%")<cr>
 nnoremap <leader>gs :echo system('git status')<cr>
 
 function Update()
-  let l:cmd = "git pull origin main"
+  let l:cmd = "git pull origin master"
   execute s:env . l:cmd . "'"
 endfunction
 command! -nargs=0 -complete=command Update call Update()

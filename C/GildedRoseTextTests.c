@@ -11,8 +11,8 @@ int main()
 {
     Item items[9];
     int last = 0;
-    int day;
-    int index;
+//    int day;
+//    int index;
     
     init_item(items + last++, "Aged Brie", 2, 0);
     printf("Last %d", last);

@@ -1,4 +1,4 @@
-let s:env = "!ssh ubuntu@ubuntu -C 'cd GildedRose-Refactoring-Kata/C;"
+let s:env = "ssh ubuntu@ubuntu -C 'cd GildedRose-Refactoring-Kata/C;"
 let mapleader="-"
 set number
 set expandtab
@@ -12,8 +12,8 @@ nnoremap <leader>ga :execute '!git add ' . expand("%")<cr>
 nnoremap <leader>gs :echo system('git status')<cr>
 
 function Update()
-  let l:cmd = "git pull origin master"
-  execute s:env . l:cmd . "'"
+  let l:cmd = s:env . "git pull origin master" . "'"
+  echo system(l:cmd)
 endfunction
 command! -nargs=0 -complete=command Update call Update()
 
@@ -23,15 +23,15 @@ function UpdateAll(msg)
   else
     let l:msg = a:msg
   endif
-  execute "!git add " . expand("%")
-  execute "!git commit -m" . l:msg
-  execute "!git push origin master"
+  echo system("git add " . expand("%"))
+  echo system("git commit -m" . l:msg)
+  echo system("git push origin master")
   call Update()
 endfunction
 command! -nargs=* -complete=command UpdateAll call UpdateAll(<q-args>)
 
 function RunTest()
-  let l:cmd = "make clean;./run-once.sh"
-  execute s:env . l:cmd . "'"
+  let l:cmd = s:env . "make clean;./run-once.sh"
+  echo system(l:cmd . "'")
 endfunction
 command! -nargs=0 -complete=command RunTest call RunTest()

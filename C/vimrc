@@ -11,7 +11,7 @@ endif
 "nnoremap <leader>ga :execute '!git add ' . expand("%")<cr>
 nnoremap <leader>ga :echo system('git add ' . expand("%"))<cr>
 nnoremap <leader>gs :echo system('git status')<cr>
-nnoremap <leader>gc :echo system('git commit')<cr>
+nnoremap <leader>gc :echo system('git commit -m changes')<cr>
 
 function ListFiles()
   let l:cmd = "ls"

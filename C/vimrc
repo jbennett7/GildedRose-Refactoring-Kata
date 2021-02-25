@@ -8,8 +8,22 @@ if has("gui_running")
     inoremap <esc> <nop>
 endif
 
-nnoremap <leader>ga :execute '!git add ' . expand("%")<cr>
+"nnoremap <leader>ga :execute '!git add ' . expand("%")<cr>
+nnoremap <leader>ga :echo system('git add ' . expand("%"))<cr>
 nnoremap <leader>gs :echo system('git status')<cr>
+nnoremap <leader>gc :echo system('git commit')<cr>
+
+function ListFiles()
+  let l:cmd = "ls"
+  echo system(l:cmd)
+endfunction
+command! -nargs=0 -complete=command Ls call ListFiles()
+
+function Pwd()
+  let l:cmd = "pwd"
+  echo system(l:cmd)
+endfunction
+command! -nargs=0 -complete=command Pwd call Pwd()
 
 function Update()
   let l:cmd = s:env . "git pull origin master" . "'"

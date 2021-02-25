@@ -12,6 +12,7 @@ endif
 nnoremap <leader>ga :echo system('git add ' . expand("%"))<cr>
 nnoremap <leader>gs :echo system('git status')<cr>
 nnoremap <leader>gc :echo system('git commit -m changes')<cr>
+nnoremap <leader>gp :echo system('git push origin master')<cr>
 
 function ListFiles()
   let l:cmd = "ls"

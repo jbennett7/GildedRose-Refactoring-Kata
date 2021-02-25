@@ -15,7 +15,7 @@ int main()
 //    int index;
     
     init_item(items + last++, "Aged Brie", 2, 0);
-    printf("Last %d", last);
+    printf("Last %d\n", last);
     update_quality(items, 0);
     print_item(items + 0);
 //    init_item(items + last++, "+5 Dexterity Vest", 10, 20);

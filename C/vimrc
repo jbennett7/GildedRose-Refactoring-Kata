@@ -46,7 +46,7 @@ endfunction
 command! -nargs=* -complete=command UpdateAll call UpdateAll(<q-args>)
 
 function RunTest()
-  let l:cmd = s:env . "make clean;./run-once.sh"
-  echo system(l:cmd . "'")
+  let l:cmd = s:env . "make clean;./run-once.sh'"
+  echo system(l:cmd)
 endfunction
 command! -nargs=0 -complete=command RunTest call RunTest()

@@ -13,7 +13,7 @@ int main()
     for(int i=0;i<9;i++)
         integer_list[i] = i+1;
     for(int i=0;i<9;i++)
-        printf("%d\n", integer_list);
+        printf("%d\n", integer_list[i]);
 //    Item items[9];
 //    int last = 0;
 //    int day;

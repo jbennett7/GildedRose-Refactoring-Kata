@@ -11,7 +11,7 @@ int main()
 {
     int integer_list[9];
     for(int i=0;i<9;i++)
-        integer_list[i] = i-10;
+        integer_list[i] = 10-i;
     for(int i=0;i<9;i++)
         printf("%d\n", integer_list[i]);
 //    Item items[9];

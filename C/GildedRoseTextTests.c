@@ -8,9 +8,9 @@ print_item(Item *item)
 }
 
 int
-print_int(int *integer)
+print_int(int integer)
 {
-    return printf("integer %d\n", *integer);
+    return printf("integer %d\n", integer);
 }
 
 int main()

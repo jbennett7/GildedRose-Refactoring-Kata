@@ -14,10 +14,6 @@ int main()
     int day;
     int index;
   
-    init_item(items + last++, "Aged Brie", 2, 0);
-    printf("Last %d\n", last);
-    update_quality(items, 1);
-    print_item(items + 0);
     init_item(items + last++, "+5 Dexterity Vest", 10, 20);
     init_item(items + last++, "Aged Brie", 2, 0);
     init_item(items + last++, "Elixir of the Mongoose", 5, 7);

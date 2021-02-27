@@ -7,13 +7,19 @@ print_item(Item *item)
     return printf("%s, %d, %d\n", item->name, item->sellIn, item->quality);
 }
 
+int
+print_int(int *integer)
+{
+    return printf("integer %d\n", integer)
+}
+
 int main()
 {
     int integer_list[9];
     for(int i=0;i<9;i++)
         integer_list[i] = 10-i;
     for(int i=0;i<9;i++)
-        printf("%d\n", integer_list[i]);
+        print_int(integer_list + i);
 //    Item items[9];
 //    int last = 0;
 //    int day;
